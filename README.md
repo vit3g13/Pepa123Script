@@ -27,6 +27,9 @@ local function showTip(message, duration)
 	end)
 end
 
+-- ✅ Zobrazí zprávu po spuštění
+showTip("Successfully loaded", 3)
+
 -- Hlavní menu (frame)
 local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 250, 0, 375)
@@ -94,28 +97,25 @@ local function createButton(text, callback)
 	button.MouseButton1Click:Connect(callback)
 end
 
-
 createButton("Wall hop script", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/lyraEz/lol/refs/heads/main/loaders/NewWallhop.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/lyraEz/lol/refs/heads/main/loaders/NewWallhop.lua"))()
 end)
 
 createButton("Zephion for all games", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/blackowl1231/ZYPHERION/refs/heads/main/main.lua')))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/blackowl1231/ZYPHERION/refs/heads/main/main.lua"))()
 end)
 
 createButton("18+🔞", function()
-loadstring(game:HttpGet(('https://pastebin.com/raw/FWwdST5Y')))()
+	loadstring(game:HttpGet("https://pastebin.com/raw/FWwdST5Y"))()
 end)
 
 createButton("LALOL hub backdoor", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script'))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script"))()
 end)
 
 createButton("Van script", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/vit3g13/dsdsd/refs/heads/main/README.md'))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/vit3g13/dsdsd/refs/heads/main/README.md"))()
 end)
-
-
 
 createButton("Close This", function()
 	mainFrame.Visible = guiVisible
