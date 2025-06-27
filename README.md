@@ -117,6 +117,10 @@ createButton("Van script", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/vit3g13/dsdsd/refs/heads/main/README.md"))()
 end)
 
+createButton("Silent executor ", function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/vit3g13/SilenExecutor/refs/heads/main/Code.lua')))()
+end)
+
 createButton("Close This", function()
 	mainFrame.Visible = guiVisible
 	showTip("Press Right Shift to open", 3)
@@ -130,4 +134,3 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		guiVisible = not guiVisible
 		mainFrame.Visible = guiVisible
 	end
-end)
