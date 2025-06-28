@@ -30,6 +30,9 @@ end
 -- ✅ Zobrazí zprávu po spuštění
 showTip("Successfully loaded", 3)
 
+-- Right Shift pro toggle menu
+local guiVisible = true
+
 -- Hlavní menu (frame)
 local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 250, 0, 375)
@@ -38,6 +41,7 @@ mainFrame.BackgroundColor3 = Color3.fromRGB(138, 146, 156)
 mainFrame.BorderSizePixel = 0
 mainFrame.Active = true
 mainFrame.Draggable = true
+mainFrame.Visible = guiVisible
 mainFrame.Parent = screenGui
 
 -- Zavírací tlačítko v pravém horním rohu menu
@@ -52,6 +56,7 @@ closeButton.TextSize = 18
 closeButton.Parent = mainFrame
 
 closeButton.MouseButton1Click:Connect(function()
+	guiVisible = false
 	mainFrame.Visible = false
 	showTip("Press Right Shift to open", 3)
 end)
@@ -69,7 +74,7 @@ titleLabel.Parent = mainFrame
 
 -- Layout pro tlačítka
 local buttonHolder = Instance.new("Frame")
-buttonHolder.Size = UDim2.new(1, 0, 1, 300)
+buttonHolder.Size = UDim2.new(1, 0, 1, -30)
 buttonHolder.Position = UDim2.new(0, 0, 0, 30)
 buttonHolder.BackgroundTransparency = 1
 buttonHolder.Parent = mainFrame
@@ -97,6 +102,7 @@ local function createButton(text, callback)
 	button.MouseButton1Click:Connect(callback)
 end
 
+-- Tlačítka se skripty
 createButton("Wall hop script", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/lyraEz/lol/refs/heads/main/loaders/NewWallhop.lua"))()
 end)
@@ -113,22 +119,22 @@ createButton("LALOL hub backdoor", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script"))()
 end)
 
-createButton("Van script", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/vit3g13/dsdsd/refs/heads/main/README.md"))()
-end)
 
+ createButton("Silent executor", function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/vit3g13/SilenExecutor/refs/heads/main/Code.lua')))()
+ end)
 
-
+-- Zavřít tlačítkem
 createButton("Close This", function()
-	mainFrame.Visible = guiVisible
+	guiVisible = false
+	mainFrame.Visible = false
 	showTip("Press Right Shift to open", 3)
 end)
 
--- Right Shift pro toggle menu
-local guiVisible = true
-
+-- Toggle pomocí RightShift
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
 	if input.KeyCode == Enum.KeyCode.RightShift and not gameProcessed then
 		guiVisible = not guiVisible
 		mainFrame.Visible = guiVisible
 	end
+end)
