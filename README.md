@@ -30,6 +30,7 @@ end
 -- ✅ Zobrazí zprávu po spuštění
 showTip("Successfully loaded", 3)
 
+
 -- Right Shift pro toggle menu
 local guiVisible = true
 
@@ -115,6 +116,11 @@ createButton("18+🔞", function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/FWwdST5Y"))()
 end)
 
+createButton("Buld a Boat", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TheRealAsu/BABFT/refs/heads/main/UAP.lua'), true)()
+end)
+
+
 createButton("LALOL hub backdoor", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script"))()
 end)
@@ -129,6 +135,7 @@ createButton("Close This", function()
 	guiVisible = false
 	mainFrame.Visible = false
 	showTip("Press Right Shift to open", 3)
+	
 end)
 
 -- Toggle pomocí RightShift
