@@ -27,7 +27,7 @@ local function showTip(message, duration)
 	end)
 end
 
--- ✅ Zobrazí zprávu po spuštění
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/vit3g13/made-by-vit3g/refs/heads/main/README.md'))() 
 showTip("Successfully loaded", 3)
 
