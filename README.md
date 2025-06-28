@@ -70,7 +70,7 @@ titleLabel.BackgroundColor3 = Color3.fromRGB(129, 133, 138)
 titleLabel.Text = "Script hub"
 titleLabel.Font = Enum.Font.SourceSansBold
 titleLabel.TextSize = 20
-titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 titleLabel.Parent = mainFrame
 
 -- Layout pro tlačítka
